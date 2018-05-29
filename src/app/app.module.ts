@@ -5,24 +5,32 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AngularFireAuthModule } from "angularfire2/auth";
-import { RouterModule, Router } from "@angular/router";
+import { RouterModule } from "@angular/router";
+import { HttpModule } from "@angular/http";
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    HttpModule,
     RouterModule.forRoot([
+      {
+        path: '',
+        component: HomeComponent
+      },
       {
         path: 'shopping-cart',
         component: ShoppingCartComponent

@@ -1,7 +1,8 @@
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CategoryService } from './../../services/category.service';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
+import 'rxjs/add/operator/take';
 
 @Component({
   selector: 'app-product-form',
@@ -10,17 +11,26 @@ import { ProductService } from '../../services/product.service';
 })
 export class ProductFormComponent {
   categories$;
+  product = {};
+  productId;
 
   constructor(
     private categoryService: CategoryService,
     private productService: ProductService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     this.categories$ = categoryService.getCategories();
+    this.productId = route.snapshot.paramMap.get('id');
+    if(this.productId)
+      productService.get(this.productId).take(1)
+        .subscribe(p => this.product = p);
   }
 
   save(product){
-    this.productService.create(product);
+    if(this.productId) this.productService.update(this.productId, product);
+    else this.productService.create(product);
+    
     this.router.navigate(['/admin/products']);
   }
 

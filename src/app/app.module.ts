@@ -14,6 +14,7 @@ import { AngularFireAuthModule } from "angularfire2/auth";
 import { RouterModule } from "@angular/router";
 import { HttpModule } from "@angular/http";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { DataTableModule } from 'angular-4-data-table';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -53,6 +54,7 @@ import { CustomFormsModule } from "ng2-validation";
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     HttpModule,
+    DataTableModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: HomeComponent },

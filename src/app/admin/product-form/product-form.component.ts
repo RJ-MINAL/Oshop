@@ -30,7 +30,14 @@ export class ProductFormComponent {
   save(product){
     if(this.productId) this.productService.update(this.productId, product);
     else this.productService.create(product);
-    
+
+    this.router.navigate(['/admin/products']);
+  }
+
+  delete(){
+    if(!confirm('Are you sure you want to delete this product?')) return;
+
+    this.productService.delete(this.productId);
     this.router.navigate(['/admin/products']);
   }
 

@@ -9,7 +9,7 @@ import { DataTableResource } from 'angular-4-data-table';
   templateUrl: './admin-products.component.html',
   styleUrls: ['./admin-products.component.css']
 })
-export class AdminProductsComponent implements OnDestroy{
+export class AdminProductsComponent implements OnDestroy {
   products: Product[];
   subscription: Subscription;
   

@@ -1,37 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-3">
-      <div class="list-group">
-        <a 
-          class="list-group-item list-group-item-action active"
-          [class.active] = "!category"
-          routerLink="/"
-        >All Categories</a>
-        <a 
-          *ngFor="let c of categories$ | async" 
-          class="list-group-item list-group-item-action" 
-          routerLink="/" 
-          [queryParams]="{ category: c.$key }"
-          [class.active] = "category === c.$key"
-        >{{ c.name }}</a>
+      <product-filter [category]="category" ></product-filter>
     </div>
-  </div>
-  <div class="col">
-    <div class="row">
-      <ng-container *ngFor="let p of filteredProducts; let i = index">
-        <div class="col-4">
-          <div class="card">
-            <img class="card-img-top" [src]="p.imageUrl" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">{{ p.title }}</h5>
-              <p class="card-text">{{ p.price }}</p>
-              <a href="#" class="btn btn-primary">Add to Cart</a>
-            </div>
+    <div class="col">
+      <div class="row">
+        <ng-container *ngFor="let p of filteredProducts; let i = index">
+          <div class="col-4">
+            <product-card [product]="p"></product-card>
           </div>
-        </div>
-        <div *ngIf="(i+1)%3 === 0" class="w-100"></div>
-      </ng-container>
+          <div *ngIf="(i+1)%3 === 0" class="w-100"></div>
+        </ng-container>
+      </div>
     </div>
   </div>
-</div>
 </div>

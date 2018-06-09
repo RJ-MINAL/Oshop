@@ -1,4 +1,4 @@
-import { Product } from './../../models/product';
+import { Product } from 'shared/models/product';
 import { Subscription } from 'rxjs/Subscription';
 import { ProductService } from './../../services/product.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';

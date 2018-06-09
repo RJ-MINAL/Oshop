@@ -1,5 +1,5 @@
-import { OrderService } from './../services/order.service';
-import { AuthService } from './../services/auth.service';
+import { OrderService } from 'shared/services/order.service';
+import { AuthService } from 'shared/services/auth.service';
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { ShoppingCart } from 'shared/models/shopping-cart';
 import { Subscription } from 'rxjs/Subscription';

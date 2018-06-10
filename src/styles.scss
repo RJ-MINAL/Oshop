@@ -3,8 +3,10 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
 
-$primary-color: #7fd62ed7;
-$primary-color-hover: #6eb927d7;
+$primary-color: #43a047;
+$primary-color-light: #76d275;
+$primary-color-dark: #00701a;
+$text-color: #343a40;
 
 body { 
   padding-top: 80px; 
@@ -23,22 +25,24 @@ h1, h2, h3 {
 }
 
 .navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
-  color: $primary-color-hover;
+  color: $primary-color-light;
 }
 
 .list-group-item.active {
   background-color: $primary-color;
   border-color: $primary-color;
+  color: $text-color;
 }
 
 .btn-primary {
   background-color: $primary-color;
   border-color: $primary-color;
+  color: $text-color;
 }
 
 .btn-primary:hover {
-  background-color: $primary-color-hover;
-  border-color: $primary-color-hover;
+  background-color: $primary-color-dark;
+  border-color: $primary-color-dark;
 }
 
 .btn-primary.disabled, .btn-primary:disabled {

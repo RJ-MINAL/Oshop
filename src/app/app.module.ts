@@ -1,4 +1,3 @@
-import { CoreModule } from './core/core.module';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -16,17 +15,13 @@ import { ProductsComponent } from 'shopping/components/products/products.compone
 import { environment } from './../environments/environment';
 import { AdminModule } from './admin/admin.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './core/components/home/home.component';
 import { LoginComponent } from './core/components/login/login.component';
-import { NavbarComponent } from './core/components/navbar/navbar.component';
+import { CoreModule } from './core/core.module';
 import { ShoppingModule } from './shopping/shopping.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent,
-    HomeComponent,
-    LoginComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

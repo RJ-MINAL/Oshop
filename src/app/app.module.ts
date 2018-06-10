@@ -25,6 +25,7 @@ import { ShoppingCartSummaryComponent } from 'shopping/components/shopping-cart-
 import { ShoppingCartComponent } from 'shopping/components/shopping-cart/shopping-cart.component';
 
 import { environment } from './../environments/environment';
+import { AdminModule } from './admin/admin.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './core/components/home/home.component';
 import { LoginComponent } from './core/components/login/login.component';
@@ -40,10 +41,7 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
     CheckOutComponent,
     OrderSuccessComponent,
     MyOrdersComponent,
-    AdminProductsComponent,
-    AdminOrdersComponent,
     LoginComponent,
-    ProductFormComponent,
     ProductFilterComponent,
     ShoppingCartSummaryComponent,
     ShippingFormComponent
@@ -51,6 +49,7 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
   imports: [
     BrowserModule,
     SharedModule,
+    AdminModule,
     FormsModule,
     CustomFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
@@ -90,9 +89,6 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
         canActivate: [AuthGuard, AdminAuthGuard] 
       }
     ])
-  ],
-  providers: [
-    AdminAuthGuard
   ],
   bootstrap: [AppComponent]
 })

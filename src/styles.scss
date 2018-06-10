@@ -48,6 +48,7 @@ h1, h2, h3 {
 .btn-primary.disabled, .btn-primary:disabled {
   background-color: $primary-color;
   border-color: $primary-color;
+  color: $text-color;
 }
 
 .form-control:focus {
